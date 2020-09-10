@@ -80,7 +80,7 @@ function gameOver()
     if(confirm(`GAME OVER\nSCORE=${score}\nNEW GAME`))
     {location.reload();}
     else
-    {window.close();}
+    {open(location,'_self').close();}
 }
 function randomer(a,b)
 {
