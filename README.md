@@ -1,3 +1,3 @@
-#SNAKE
+SNAKE
 --------
 Snake Game in JavaScript
