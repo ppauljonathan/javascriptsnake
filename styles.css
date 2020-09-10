@@ -1,0 +1,8 @@
+#playarea{width:100%;height:100%;
+    background-color:black;
+    position:absolute;
+    top:0%;left:0%;}
+.segment,#food{position:absolute;
+width:10px;height:10px;}
+.segment{background-color:green;}
+#food{background-color:#f00;}
