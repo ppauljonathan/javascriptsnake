@@ -1,11 +1,19 @@
 var seg=document.getElementsByClassName("segment"),start=0,score=0;
 var f=document.getElementById("food");
+var walls=0;
 seg[0].style.backgroundColor="#0f0";
 seg[0].style.zIndex=10;
 var v_x=0,v_y=0,x=100,y=100,spx=[],spy=[],spxp=[],spyp=[],x_1=200,y_1=y;
 spx[0]=x;spy[0]=y;
 f.style.left=`${x_1}px`;
 f.style.top=`${y_1}px`;
+
+function switcheroo()
+{
+    if(walls==0){walls=1;}
+    else if(walls==1){walls=1;}
+
+}
 
 for(i=1;i<seg.length;i++)
         {
@@ -30,8 +38,8 @@ function update()
             spy[i]=spyp[i-1];
         }
     x+=v_x;y+=v_y;
-    //flatTorus();
-    wall();
+    if(walls==0){flatTorus();}
+    else{wall();}
     spx[0]=x;spy[0]=y;
     place();
 }
@@ -56,6 +64,7 @@ function move(k)
          {if(v_x==0){v_x=-10;v_y=0;}start=1;}
          else if(k=="ArrowRight")
          {if(v_x==0){v_x=10;v_y=0;}start=1;}
+         else if(k=="w"||k=="W"){switcheroo();}
     }
 function place()
 {
