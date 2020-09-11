@@ -30,9 +30,15 @@ function update()
             spy[i]=spyp[i-1];
         }
     x+=v_x;y+=v_y;
-    flatTorus();
+    //flatTorus();
+    wall();
     spx[0]=x;spy[0]=y;
     place();
+}
+function wall()
+{
+    if(spx[0]==0||spx[0]>=window.innerWidth-10||spy[0]==0||spy[0]>=window.innerHeight-10)
+    {gameOver();}
 }
 function flatTorus()
 {if(x<0){x=window.innerWidth-10;}
@@ -78,7 +84,7 @@ function place()
 function gameOver()
 {
     if(confirm(`GAME OVER\nSCORE=${score}\nNEW GAME`))
-    {location.reload();}
+    {window.location.reload();}
     else
     {open(location,'_self').close();}
 }
