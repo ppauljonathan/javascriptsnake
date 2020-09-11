@@ -1,20 +1,11 @@
 var seg=document.getElementsByClassName("segment"),start=0,score=0;
 var f=document.getElementById("food");
-var walls=0;
 seg[0].style.backgroundColor="#0f0";
 seg[0].style.zIndex=10;
 var v_x=0,v_y=0,x=100,y=100,spx=[],spy=[],spxp=[],spyp=[],x_1=200,y_1=y;
 spx[0]=x;spy[0]=y;
 f.style.left=`${x_1}px`;
-f.style.top=`${y_1}px`;
-
-function switcheroo()
-{
-    if(walls==0){walls=1; document.title="SNAKE (WALLS)";}
-    else if(walls==1){walls=0; document.title="SNAKE (NO WALLS)";}
-
-}
-
+f.style.top=`${y_1}px`
 for(i=1;i<seg.length;i++)
         {
             spx[i]=x;
@@ -38,15 +29,9 @@ function update()
             spy[i]=spyp[i-1];
         }
     x+=v_x;y+=v_y;
-    if(walls==0){flatTorus();}
-    else{wall();}
+    flatTorus();
     spx[0]=x;spy[0]=y;
     place();
-}
-function wall()
-{
-    if(spx[0]==0||spx[0]>=window.innerWidth-10||spy[0]==0||spy[0]>=window.innerHeight-10)
-    {gameOver();}
 }
 function flatTorus()
 {if(x<0){x=window.innerWidth-10;}
