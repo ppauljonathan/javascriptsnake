@@ -10,8 +10,8 @@ f.style.top=`${y_1}px`;
 
 function switcheroo()
 {
-    if(walls==0){walls=1;}
-    else if(walls==1){walls=1;}
+    if(walls==0){walls=1; document.title="SNAKE (WALLS)";}
+    else if(walls==1){walls=0; document.title="SNAKE (NO WALLS)";}
 
 }
 
@@ -92,10 +92,9 @@ function place()
 }
 function gameOver()
 {
-    if(confirm(`GAME OVER\nSCORE=${score}\nNEW GAME`))
-    {window.location.reload();}
-    else
-    {open(location,'_self').close();}
+    alert(`GAME OVER\nSCORE=${score}\nNEW GAME\nPRESS RESTART TO PLAY AGAIN IF OKAY DOESN'T WORK`);
+    window.location.reload(true);
+
 }
 function randomer(a,b)
 {
