@@ -84,8 +84,7 @@ function place()
 function gameOver()
 {
     v_x=0;v_y=0;
-    //alert(`GAME OVER\nSCORE=${score}\nNEW GAME\nPRESS RESTART TO PLAY AGAIN IF OKAY DOESN'T WORK`);
-    window.location.reload();
+    document.getElementById("alert").innerHTML=`GAME OVER SCORE=${score}\nCLICK THIS TEXT TO PLAY AGAIN`;
 
 }
 function randomer(a,b)
