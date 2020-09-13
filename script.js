@@ -6,16 +6,19 @@ var v_x=0,v_y=0,x=100,y=100,spx=[],spy=[],spxp=[],spyp=[],x_1=200,y_1=y;
 spx[0]=x;spy[0]=y;
 f.style.left=`${x_1}px`;
 f.style.top=`${y_1}px`
-for(i=1;i<seg.length;i++)
-        {
-            spx[i]=x;
-            spy[i]=y;
-        }
-for(i=0 ;i<seg.length-1;i++)
-        {
-            spxp[i]=spx[i];
-            spyp[i]=spy[i];
-        }
+function init()
+{
+    for(i=1;i<seg.length;i++)
+            {
+                spx[i]=x;
+                spy[i]=y;
+            }
+    for(i=0 ;i<seg.length-1;i++)
+            {
+                spxp[i]=spx[i];
+                spyp[i]=spy[i];
+            }
+}
 function update()
 {
     for(i=0;i<seg.length-1;i++)
