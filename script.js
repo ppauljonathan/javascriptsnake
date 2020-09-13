@@ -32,10 +32,13 @@ function update()
             spy[i]=spyp[i-1];
         }
     x+=v_x;y+=v_y;
-    flatTorus();
+    //flatTorus();
+    walls();
     spx[0]=x;spy[0]=y;
     place();
 }
+function walls()
+{if(x<10||x>window.innerWidth-20||y<10||y>window.innerHeight-20){gameOver();}}
 function flatTorus()
 {if(x<0){x=window.innerWidth-10;}
 else if(x>window.innerWidth-10){x=0;}
@@ -80,8 +83,9 @@ function place()
 }
 function gameOver()
 {
-    alert(`GAME OVER\nSCORE=${score}\nNEW GAME\nPRESS RESTART TO PLAY AGAIN IF OKAY DOESN'T WORK`);
-    window.location.reload(true);
+    v_x=0;v_y=0;
+    //alert(`GAME OVER\nSCORE=${score}\nNEW GAME\nPRESS RESTART TO PLAY AGAIN IF OKAY DOESN'T WORK`);
+    window.location.reload();
 
 }
 function randomer(a,b)
