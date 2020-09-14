@@ -33,7 +33,7 @@ function update()
     place();
 }
 function walls()
-{if(x<0||x>window.innerWidth-20||y<0||y>window.innerHeight-20){gameOver();}}
+{if(x<0||x>window.innerWidth-5||y<0||y>window.innerHeight-5){gameOver();}}
 function flatTorus()
 {if(x<0){x=window.innerWidth-10;}
 else if(x>window.innerWidth-10){x=0;}
