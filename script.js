@@ -6,6 +6,12 @@ var v_x=0,v_y=0,x=100,y=100,spx=[],spy=[],spxp=[],spyp=[],x_1=200,y_1=y;
 spx[0]=x;spy[0]=y;
 f.style.left=`${x_1}px`;
 f.style.top=`${y_1}px`;
+var wall=0;
+function switcheroo()
+{
+    if(wall==0){wall=1;document.title="SNAKE (WALLS)";}
+    else{wall=0;document.title="SNAKE (NO WALLS)";}
+}
 function init()
 {
     for(i=1;i<seg.length;i++)
@@ -32,13 +38,15 @@ function update()
             spy[i]=spyp[i-1];
         }
     x+=v_x;y+=v_y;
-    //flatTorus();
-    walls();
+    if(wall==0)
+    {flatTorus();}
+    else
+    {walls();}
     spx[0]=x;spy[0]=y;
     place();
 }
 function walls()
-{if(x<10||x>window.innerWidth-20||y<10||y>window.innerHeight-20){gameOver();}}
+{if(x<0||x>window.innerWidth-20||y<0||y>window.innerHeight-20){gameOver();}}
 function flatTorus()
 {if(x<0){x=window.innerWidth-10;}
 else if(x>window.innerWidth-10){x=0;}
@@ -84,7 +92,11 @@ function place()
 function gameOver()
 {
     v_x=0;v_y=0;
-    document.getElementById("alert").innerHTML=`GAME OVER SCORE=${score}\nCLICK THIS TEXT TO PLAY AGAIN`;
+    for(var i=0;i<seg.length;i++)
+    {seg[i].style.backgroundColor="#000";}
+    f.style.backgroundColor="#000";
+    document.getElementById("alert").style.border="2px solid white"
+    document.getElementById("alert").innerHTML="<pre>GAME OVER\nSCORE="+score+"\nCLICK THIS BOX TO\nPLAY AGAIN</pre>";
 
 }
 function randomer(a,b)
