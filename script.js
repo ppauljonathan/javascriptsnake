@@ -12,7 +12,7 @@ function switcheroo()
     if(wall==0){wall=1;document.title="SNAKE (WALLS)";}
     else{wall=0;document.title="SNAKE (NO WALLS)";}
 }
-function init()
+/*function init()
 {
     for(i=1;i<seg.length;i++)
             {
@@ -24,7 +24,7 @@ function init()
                 spxp[i]=spx[i];
                 spyp[i]=spy[i];
             }
-    }    
+    }*/    
 function update()
 {
     for(i=0;i<seg.length-1;i++)
