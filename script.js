@@ -1,7 +1,6 @@
 var seg=document.getElementsByClassName("segment"),start=0,score=0;
 var f=document.getElementById("food");
 seg[0].style.backgroundColor="#0f0";
-seg[0].style.zIndex=10;
 var v_x=0,v_y=0,x=100,y=100,spx=[],spy=[],spxp=[],spyp=[],x_1=200,y_1=y;
 spx[0]=x;spy[0]=y;
 f.style.left=`${x_1}px`;
